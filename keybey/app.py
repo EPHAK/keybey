@@ -22,6 +22,7 @@ from textual.containers import Vertical
 from textual.screen import ModalScreen
 from textual.widgets import DataTable, Footer, Header, Input, Label, ListItem, ListView
 
+from . import xdg
 from .keybind import Keybind, Source
 from .sources_hyprland import HyprlandSource
 from .sources_nvim import NvimSource
@@ -32,7 +33,7 @@ SOURCES: list[Source] = [HyprlandSource(), YaziSource(), NvimSource()]
 ALL_SOURCES = "All sources"
 COLUMNS = ("Source", "Context", "Keys", "Action", "Description", "Editable")
 
-STATE_DIR = Path.home() / ".local" / "state" / "keybey"
+STATE_DIR = xdg.state_home() / "keybey"
 THEME_FILE = STATE_DIR / "theme"
 
 

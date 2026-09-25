@@ -35,9 +35,10 @@ from pathlib import Path
 import tomlkit
 
 from . import config
+from . import xdg
 
 DEFAULT_KEYMAP = Path(__file__).parent / "data" / "yazi_default_keymap.toml"
-USER_KEYMAP = Path.home() / ".config" / "yazi" / "keymap.toml"
+USER_KEYMAP = xdg.config_home() / "yazi" / "keymap.toml"
 ADD_CONTEXT = "mgr"
 
 

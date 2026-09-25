@@ -35,7 +35,8 @@ or `keybey/sources_yazi.py` for examples) added to `SOURCES` in
   the same way across every source that supports editing at all (not
   just Hyprland's)
 - Every write is backed up first to `~/.local/state/keybey/backups/`
-  before the config file is touched
+  before the config file is touched. `$XDG_STATE_HOME` and
+  `$XDG_CONFIG_HOME` are honoured when set
 - Reloads Hyprland (`hyprctl reload`) automatically after any Hyprland
   change (yazi and Neovim need no reload -- both read their config
   fresh on every launch)
@@ -131,22 +132,27 @@ Neovim's are a plain mode, key, and command (e.g. `n`, `<leader>w`,
 - yazi, for the yazi source
 - Neovim, for the Neovim source (expects `lua/config/keymaps.lua` and
   `lua/plugins/*.lua`, i.e. a kickstart/lazy.nvim-style layout)
-- Python 3.10+
-- `python-textual`, `python-tomlkit`
+- Python 3.11+ (uses `tomllib` from the standard library)
 
-```bash
-pip install textual tomlkit
-```
+Python dependencies (`textual`, `tomlkit`) are installed automatically
+by the commands below.
 
 ## Installation
 
 ```bash
-git clone https://github.com/EPHAK/keybey.git
-ln -s "$(pwd)/keybey/bin/keybey" ~/.local/bin/keybey
-ln -s "$(pwd)/keybey/bin/keybey" ~/.local/bin/kb   # short alias
+pipx install git+https://github.com/EPHAK/keybey.git
+ln -s "$(command -v keybey)" ~/.local/bin/kb   # optional short alias
 ```
 
-Ensure `~/.local/bin` is on your `PATH`.
+Or from a clone, for development:
+
+```bash
+git clone https://github.com/EPHAK/keybey.git
+cd keybey
+pip install -e ".[dev]"
+```
+
+Either way this puts a `keybey` command on your `PATH`.
 
 ## How it works
 

@@ -32,8 +32,10 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
-HYPR_LUA = Path.home() / ".config" / "hypr" / "hyprland.lua"
-BACKUP_DIR = Path.home() / ".local" / "state" / "keybey" / "backups"
+from . import xdg
+
+HYPR_LUA = xdg.config_home() / "hypr" / "hyprland.lua"
+BACKUP_DIR = xdg.state_home() / "keybey" / "backups"
 
 LOCAL_STR_RE = re.compile(r'^local\s+([A-Za-z_]\w*)\s*=\s*"([^"]*)"\s*$')
 BIND_START_RE = re.compile(r"^hl\.bind\(")

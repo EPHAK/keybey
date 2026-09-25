@@ -28,10 +28,11 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from . import config
+from . import xdg
 
-NVIM_KEYMAPS_FILE = Path.home() / ".config" / "nvim" / "lua" / "config" / "keymaps.lua"
-NVIM_PLUGINS_DIR = Path.home() / ".config" / "nvim" / "lua" / "plugins"
-NVIM_INIT_FILE = Path.home() / ".config" / "nvim" / "init.lua"
+NVIM_KEYMAPS_FILE = xdg.config_home() / "nvim" / "lua" / "config" / "keymaps.lua"
+NVIM_PLUGINS_DIR = xdg.config_home() / "nvim" / "lua" / "plugins"
+NVIM_INIT_FILE = xdg.config_home() / "nvim" / "init.lua"
 
 LEADER_RE = re.compile(r'vim\.g\.mapleader\s*=\s*"((?:[^"\\]|\\.)*)"')
 

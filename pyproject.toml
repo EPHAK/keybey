@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keybey"
+version = "0.1.0"
+description = "Fuzzy-searchable keybind browser and editor for Hyprland, yazi, and Neovim"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "textual>=0.80",
+    "tomlkit>=0.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/EPHAK/keybey"
+
+[project.scripts]
+keybey = "keybey.app:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["keybey"]
+
+[tool.setuptools.package-data]
+keybey = ["data/*.toml"]
