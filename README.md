@@ -175,7 +175,7 @@ Same backup-before-write guarantee as Hyprland.
 
 Neovim's config isn't one file -- `lua/config/keymaps.lua` is scanned
 line by line for `map("mode", "lhs", "rhs")` calls (the `map` alias for
-`vim.keymap.set` this user's config already uses), backed up and edited
+`vim.keymap.set` that such configs conventionally use), backed up and edited
 the same way as Hyprland's single-line binds; `lua/plugins/*.lua` is
 scanned separately (brace-depth-aware, to correctly split entries like
 `{ "s", mode = { "n", "x", "o" }, desc = "..." }` where a naive regex

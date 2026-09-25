@@ -12,7 +12,7 @@ per context, e.g.:
     desc = "Enter the child directory, or open the file"
 
 Default entries are always read-only (browsable/searchable only -- they're
-a point-in-time snapshot of upstream, not this user's actual config, so
+a point-in-time snapshot of upstream, not your actual config, so
 "editing" one wouldn't do anything real). User-keymap entries are editable
 UNLESS their `on` or `run` is a TOML array rather than a plain string (a
 multi-key sequence or macro chain) -- flattening one of those to a single

@@ -2,7 +2,7 @@
 Parses and edits Neovim keymaps. Two very different sources, matching the
 "refuse rather than risk corruption" rule the other sources already follow:
 
-- ~/.config/nvim/lua/config/keymaps.lua -- this user's dedicated general
+- ~/.config/nvim/lua/config/keymaps.lua -- the dedicated general
   keymaps file, using a `local map = vim.keymap.set` alias. Only single-line
   `map("mode", "lhs", "rhs")` calls (mode/lhs/rhs all plain string literals,
   not a table or a function ref) are editable; anything else on that line
