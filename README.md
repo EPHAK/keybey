@@ -154,6 +154,12 @@ pip install -e ".[dev]"
 
 Either way this puts a `keybey` command on your `PATH`.
 
+If you install with `pip` rather than `pipx` on an older distribution,
+upgrade `pip` first (`python3 -m pip install --upgrade pip`). Versions
+before roughly 23.x build this package as an empty `UNKNOWN` wheel and
+still report success, leaving nothing installed.
+
+
 ## How it works
 
 `keybey` scans `hyprland.lua` for `hl.bind(...)` call sites. A bind is
