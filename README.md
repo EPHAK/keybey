@@ -17,6 +17,8 @@ shows both yazi's default `l` → `enter` binding *and* your own override
 of it in the same view -- the exact ambiguity ("why doesn't `l` work")
 that motivated adding a second source in the first place.
 
+![demo](demo.gif)
+
 Adding a new tool is one `Source` implementation (see
 `keybey/keybind.py` for the protocol, `keybey/sources_hyprland.py`
 or `keybey/sources_yazi.py` for examples) added to `SOURCES` in
